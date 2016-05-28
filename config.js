@@ -1,7 +1,7 @@
 var config = {
   urlPrefix: '',
   listeningPort: 3000,
-  api: 'untappd',
+  api: 'breweryDb',
   breweryDb: {
     key: process.env.UJ_BREWERYDB_KEY,
     urlPrefix: 'https://api.brewerydb.com/v2/',
