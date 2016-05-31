@@ -33,6 +33,7 @@ module.exports = function(req, res, next) {
       });
       break;
     case 'search':
+    case 's':
       if(typeof search !== 'undefined') {
         beerApi.search(search, function(beers) {
           var brewsText = "Were you searching for a Mike's Hard Lemonade? Try again...";
@@ -48,6 +49,7 @@ module.exports = function(req, res, next) {
         break;
       }
     case 'display':
+    case 'd':
       if(typeof search !== 'undefined') {
         beerApi.beer(search, function(beer) {
           if(typeof beer === 'undefined') {
