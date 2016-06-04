@@ -59,14 +59,24 @@ var beerById = function(beerId, callback) {
       var beer = undefined;
       if (typeof(body.response) !== 'undefined' && typeof(body.response.beer) !== 'undefined') {
         var beerData = body.response.beer;
+        var style = 'Style: ' + beerData.beer_style;
+        var abv = 'ABV: ' + beerData.beer_abv + '%';
+        var ibu = 'IBU: ' + beerData.beer_ibu;
+        var score = '★' + floatFormat(beerData.rating_score, 2);
+        var count = 'Ratings: ' + beerData.rating_count.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
         beer = {
           name: beerData.beer_name + ' - ' + beerData.brewery.brewery_name,
           link: config.untappd.beerLinkPrefix + beerData.bid,
-          description: beerData.beer_description,
+          description: style + '\n' + abv + ' ' + ibu + ' ' + score + ' ' + count + '\n' + beerData.beer_description,
           imageUrl: beerData.beer_label
         };
       }
       callback(beer);
     }
   );
+}
+
+var floatFormat = function(number, n) {
+    var _pow = Math.pow(10, n);
+    return Math.round(number * _pow) / _pow;
 }
