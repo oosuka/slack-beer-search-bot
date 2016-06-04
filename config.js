@@ -15,6 +15,6 @@ var config = {
   },
   slackToken: process.env.UJ_SLACK_TOKEN,
   slackPostMessage: 'https://slack.com/api/chat.postMessage',
-  searchLimit: 5
+  searchLimit: 10
 }
 module.exports = config;
