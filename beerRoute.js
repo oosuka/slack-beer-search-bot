@@ -69,5 +69,5 @@ module.exports = function(req, res, next) {
 }
 
 var help = function() {
-  return 'Help:\n/[command] search Yuengling\n/[command] display 16649\n/[command] display SweetWater 420\n/[command] help';
+  return 'Help:\n/[command] (search|s) Yuengling\n/[command] (display|d) 16649\n/[command] (display|d) SweetWater 420\n/[command] help';
 }
