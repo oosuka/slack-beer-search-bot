@@ -59,6 +59,7 @@ var beerById = function(beerId, callback) {
       var beer = undefined;
       if (typeof(body.response) !== 'undefined' && typeof(body.response.beer) !== 'undefined') {
         var beerData = body.response.beer;
+        var production = (beerData.is_in_production === 0) ? '`Out of Production`\n' : '';
         var style = 'Style: ' + beerData.beer_style;
         var abv = 'ABV: ' + beerData.beer_abv + '%';
         var ibu = 'IBU: ' + beerData.beer_ibu;
@@ -67,7 +68,7 @@ var beerById = function(beerId, callback) {
         beer = {
           name: beerData.beer_name + ' - ' + beerData.brewery.brewery_name,
           link: config.untappd.beerLinkPrefix + beerData.bid,
-          description: style + '\n' + abv + ' ' + ibu + ' ' + score + ' ' + count + '\n' + beerData.beer_description,
+          description: production + style + '\n' + abv + ' ' + ibu + ' ' + score + ' ' + count + '\n' + beerData.beer_description,
           imageUrl: beerData.beer_label
         };
       }

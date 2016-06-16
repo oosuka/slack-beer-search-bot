@@ -8,11 +8,12 @@ module.exports = {
       title_link: beer.link,
       text: beer.description,
       fallback: beer.name,
-      thumb_url: beer.imageUrl
+      thumb_url: beer.imageUrl,
+      mrkdwn_in: ["text"]
     };
   },
 
-  displayToChat: function (channel_id, attachments) {
+  displayToChat: function(channel_id, attachments) {
     request.post({
       url: config.slackPostMessage,
       json: true,
@@ -20,7 +21,8 @@ module.exports = {
         token: config.slackToken,
         channel: channel_id,
         username: "Beer Bot",
-        attachments: JSON.stringify(attachments)
+        attachments: JSON.stringify(attachments),
+        icon_emoji: ":beers:"
       }
     }, function(err, httpResponse, body) {
       if(err) {
