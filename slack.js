@@ -20,7 +20,8 @@ module.exports = {
         token: config.slackToken,
         channel: channel_id,
         username: "Beer Bot",
-        attachments: JSON.stringify(attachments)
+        attachments: JSON.stringify(attachments),
+        icon_emoji: ":beers:"
       }
     }, function(err, httpResponse, body) {
       if(err) {
