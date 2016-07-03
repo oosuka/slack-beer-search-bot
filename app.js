@@ -1,5 +1,6 @@
 var config = require('./config');
 var beerRoute = require('./beerRoute');
+var breweryRoute = require('./breweryRoute');
 var express = require('express');
 var bodyParser = require('body-parser');
 
@@ -9,8 +10,9 @@ var port = process.env.PORT || config.listeningPort;
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Beer route
+// route
 app.post(config.urlPrefix + '/beer', beerRoute);
+app.post(config.urlPrefix + '/brewery', breweryRoute);
 
 // error handler
 app.use(function (err, req, res, next) {

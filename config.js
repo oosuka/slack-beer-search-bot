@@ -6,7 +6,8 @@ var config = {
     clientId: process.env.UJ_UNTAPPD_ID,
     clientSecret: process.env.UJ_UNTAPPD_SECRET,
     urlPrefix: 'https://api.untappd.com/v4/',
-    beerLinkPrefix: 'https://untappd.com/beer/'
+    beerLinkPrefix: 'https://untappd.com/beer/',
+    breweryLinkPrefix: 'https://untappd.com/brewery/'
   },
   slackToken: process.env.UJ_SLACK_TOKEN,
   slackPostMessage: 'https://slack.com/api/chat.postMessage',
