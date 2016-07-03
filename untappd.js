@@ -37,7 +37,7 @@ var search = function(searchTerm, callback) {
   client.get('search/beer?q=' + searchTerm + '&' + apiParameters(),
     function(err, brewRes, body) {
       var beers = undefined;
-      if (typeof(body.response) !== 'undefined' && typeof(body.response.beers) !== 'undefined' && typeof(body.response.beers.items) !== 'undefined') {
+      if (typeof(body.response) !== 'undefined' && typeof(body.response.beers) !== 'undefined' && body.response.beers.count > 0) {
         var beersJson = body.response.beers.items;
         beers = new Array(beersJson.length);
         for(var i = 0;i < beersJson.length;i++) {

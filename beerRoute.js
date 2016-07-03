@@ -21,17 +21,6 @@ module.exports = function(req, res, next) {
     case 'help':
       res.status(200).send(help());
       break;
-    case 'otw':
-      beerApi.botw(function(beer) {
-        if(typeof beer === 'undefined') {
-          res.status(200).send('Sorry there must be a leak in the keg. Try again at a later time...');
-        } else {
-          var attachments = [slack.createAttachment(beer)];
-          slack.displayToChat(req.body.channel_id, attachments);
-          res.status(200).send();
-        }
-      });
-      break;
     case 'search':
     case 's':
       if(typeof search !== 'undefined') {
@@ -69,5 +58,5 @@ module.exports = function(req, res, next) {
 }
 
 var help = function() {
-  return 'Help:\n/[command] (search|s) Yuengling\n/[command] (display|d) 16649\n/[command] (display|d) SweetWater 420\n/[command] help';
+  return 'Help:\n/beer (search|s) Marihana\n/beer (display|d) 853454\n/beer (display|d) Shiga Kogen IPA\n/beer help';
 }
