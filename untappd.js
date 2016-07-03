@@ -21,11 +21,6 @@ module.exports = {
     } else {
       beerById(beerId, callback);
     }
-  },
-
-  featured: function(callback) {
-    // No featured or beer of the week
-    callback(undefined);
   }
 };
 
