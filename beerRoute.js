@@ -69,5 +69,5 @@ module.exports = function(req, res, next) {
 }
 
 var help = function() {
-  return 'Help:\n/[command] (search|s) Yuengling\n/[command] (display|d) 16649\n/[command] (display|d) SweetWater 420\n/[command] help';
+  return 'Help:\n/beer (search|s) Marihana\n/beer (display|d) 853454\n/beer (display|d) Shiga Kogen IPA\n/beer help';
 }
