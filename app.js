@@ -12,7 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Beer route
 app.post(config.urlPrefix + '/beer', beerRoute);
 
-
 // error handler
 app.use(function (err, req, res, next) {
   console.error(err.stack);
